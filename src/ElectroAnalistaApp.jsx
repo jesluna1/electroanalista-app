@@ -5,9 +5,9 @@ export default function ElectroAnalistaApp() {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const promptBase = `Eres un asistente experto en electrónica aplicada. Analiza la siguiente consulta como si fueras el GPT personalizado ElectroAnalista, especializado en fuentes conmutadas, motherboards y fallas electrónicas. Responde en español técnico, de forma clara y paso a paso si es necesario.
+  const promptBase = Eres un asistente experto en electrónica aplicada. Analiza la siguiente consulta como si fueras el GPT personalizado ElectroAnalista, especializado en fuentes conmutadas, motherboards y fallas electrónicas. Responde en español técnico, de forma clara y paso a paso si es necesario.
 
-Consulta:`;
+Consulta:;
 
 const handleAsk = async () => {
   if (!query.trim()) return;
