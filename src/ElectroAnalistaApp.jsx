@@ -5,7 +5,7 @@ export default function ElectroAnalistaApp() {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
 
-const promptBase = `Eres un asistente experto en electrónica aplicada. Analiza la siguiente consulta como si fueras el GPT personalizado ElectroAnalista, especializado en fuentes conmutadas, motherboards y fallas electronicas. Responde en español tecnico, de forma clara y paso a paso si es necesario. 
+  const promptBase = `Eres un asistente experto en electrónica aplicada. Analiza la siguiente consulta como si fueras el GPT personalizado ElectroAnalista, especializado en fuentes conmutadas, motherboards y fallas electrónicas. Responde en español técnico, de forma clara y paso a paso si es necesario.
 
 Consulta:`;
 
@@ -34,3 +34,25 @@ Consulta:`;
     }
     setLoading(false);
   }
+
+  return (
+    <div>
+      <h1>ElectroAnalista App</h1>
+      <textarea
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+        placeholder="Describe tu consulta electrónica aquí..."
+        rows={5}
+        cols={50}
+        disabled={loading}
+      />
+      <br />
+      <button onClick={handleAsk} disabled={loading || !query.trim()}>
+        {loading ? "Consultando..." : "Consultar"}
+      </button>
+      <div style={{ marginTop: "1em", whiteSpace: "pre-wrap" }}>
+        {response}
+      </div>
+    </div>
+  );
+}
